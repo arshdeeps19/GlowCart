@@ -95,3 +95,50 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+# GlowCart 🛍️
+
+A React Native e-commerce app focused on **beauty & skincare products**.  
+Built with **React Native**, **TypeScript**, and **React Navigation**.
+
+---
+
+## 📹 Demo Video
+https://drive.google.com/file/d/1bLzG54yopiz4B8zoUEKTZ8-esushXWhi/view?usp=sharing
+
+---
+
+## ⚙️ Setup Instructions
+
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/arshdeeps19/GlowCart.git
+   cd GlowCart
+
+2.Install Dependencies 
+npm install
+# OR
+yarn install
+
+3. Install Cocoapods (IOS Only)
+   cd ios && pod install && cd ..
+
+4. Run the project 
+npx react-native run-ios     # iOS
+npx react-native run-android # Android
+
+Time Taken - 3 days
+
+Assumptions / Known Issues
+	•	Using dummyjson.com API for mock product data.
+	•	Login/Register is mock only (no backend authentication).
+	•	Cart/Wishlist is not persisted after reload.
+	•	Fonts must be linked manually (Italiana-Regular).
+	•	Best viewed on iPhone 14 / 430x932 simulator (matches Figma).
+
+
+
+
+
+
+
