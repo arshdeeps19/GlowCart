@@ -1,4 +1,3 @@
-// src/components/layout/SearchBar.tsx
 import React from 'react';
 import { View, Text, TextInput, StyleSheet, ViewStyle } from 'react-native';
 
@@ -6,7 +5,7 @@ type Props = {
   value: string;
   onChangeText: (t: string) => void;
   placeholder?: string;
-  style?: ViewStyle;              // <— let parent control horizontal padding
+  style?: ViewStyle;             
 };
 
 export default function SearchBar({ value, onChangeText, placeholder = 'Search for all products', style }: Props) {
@@ -28,7 +27,7 @@ const s = StyleSheet.create({
   wrap: {
     flexDirection: 'row',
     alignItems: 'center',
-    borderBottomWidth: 1,          // single underline
+    borderBottomWidth: 1,          
     borderBottomColor: '#e5e7eb',
     paddingBottom: 8,
   },
