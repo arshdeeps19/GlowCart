@@ -15,20 +15,14 @@ import type { RootStackParamList } from '../navigation/types';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Onboarding'>;
 
-/** ------- Figma specs (base width 430) ------- */
 const FIGMA_W = 430;
-const FIGMA_HERO_H = 695;   // image + panel block with rounded bottom
-const FIGMA_PANEL_H = 329;  // the brown panel height
-const FIGMA_RADIUS  = 42;   // bottom radius on the hero block
+const FIGMA_HERO_H = 695;   
+const FIGMA_PANEL_H = 329;  
+const FIGMA_RADIUS  = 42;   
 
-/** Colors */
 const PANEL = '#C9A7A2';
 const ROSE  = '#B84953';
 
-/**
- * How much lower to move the whole hero (in *device* dp, not Figma px).
- * Increase this if you still want it lower.
- */
 const EXTRA_PUSH_DP = 56;
 
 export default function Onboarding({ navigation }: Props) {
@@ -36,15 +30,12 @@ export default function Onboarding({ navigation }: Props) {
   const { width } = Dimensions.get('window');
   const scale = width / FIGMA_W;
 
-  // scaled dimensions from Figma
   const HERO_H  = Math.round(FIGMA_HERO_H * scale);
   const PANEL_H = Math.round(FIGMA_PANEL_H * scale);
   const RADIUS  = Math.round(FIGMA_RADIUS  * scale);
 
-  // push the hero below the notch + a manual extra push
   const marginTop = insets.top + EXTRA_PUSH_DP;
 
-  // Title typography from the spec (Italiana 60)
   const titleSize   = 60 * scale;
   const titleLetter = -0.32 * scale;
 
@@ -52,7 +43,6 @@ export default function Onboarding({ navigation }: Props) {
     <View style={[styles.screen, { backgroundColor: PANEL }]}>
       <StatusBar translucent barStyle="light-content" backgroundColor="transparent" />
 
-      {/* HERO (top image + bottom panel) */}
       <View
         style={[
           styles.hero,
@@ -64,14 +54,12 @@ export default function Onboarding({ navigation }: Props) {
           },
         ]}
       >
-        {/* Top image: exact height = hero - panel */}
         <ImageBackground
           source={require('../assets/onboarding.png')}
           style={{ width: '100%', height: HERO_H - PANEL_H }}
           resizeMode="cover"
         />
 
-        {/* Bottom panel */}
         <View style={[styles.panel, { height: PANEL_H }]}>
           <Text
             style={[
@@ -89,7 +77,7 @@ export default function Onboarding({ navigation }: Props) {
             style={[
               styles.sub,
               {
-                fontSize: 24 * scale,            // Inter 24 in mock
+                fontSize: 24 * scale,            
                 letterSpacing: -0.32 * scale,
                 marginTop: 6 * scale,
                 marginBottom: 18 * scale,
@@ -118,7 +106,6 @@ export default function Onboarding({ navigation }: Props) {
         </View>
       </View>
 
-      {/* progress pill anchored above the home indicator */}
       <View
         style={[
           styles.pill,
@@ -143,7 +130,7 @@ const styles = StyleSheet.create({
   hero: {
     width: '100%',
     backgroundColor: PANEL,
-    overflow: 'hidden', // needed for bottom radii
+    overflow: 'hidden', 
   },
 
   panel: {
@@ -157,7 +144,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
   },
 
-  // Italiana Regular — add the font to match exactly
   title: {
     color: '#FFFFFF',
     textAlign: 'center',
