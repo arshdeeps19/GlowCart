@@ -21,7 +21,6 @@ export function ProductCard({ item, onPress, onToggleWish }: Props) {
       <View style={{ padding: 10 }}>
         <Text numberOfLines={1} style={s.title}>{item.title}</Text>
 
-        {/* price + heart on the same row (heart AFTER the price) */}
         <View style={s.priceRow}>
           <Text style={s.price}>${item.price}</Text>
           <TouchableOpacity onPress={onToggleWish} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
