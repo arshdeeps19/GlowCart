@@ -9,7 +9,7 @@ import {
 	SafeAreaView,
 } from 'react-native';
 import { StackActions } from '@react-navigation/native';
-import { rootNavRef } from '../../App'; // ← adjust path if needed
+import { rootNavRef } from '../../App'; 
 
 const ROSE = '#b94f58';
 const BG = '#fdeae6';
@@ -17,9 +17,7 @@ const CARD = '#fff';
 
 export default function Profile() {
 	const onLogout = () => {
-		// TODO: clear any auth/AsyncStorage here if you use it
 		if (rootNavRef.isReady()) {
-			// Replace current route at the ROOT stack with Login (no back into tabs)
 			rootNavRef.dispatch(StackActions.replace('Login'));
 		} else {
 			console.warn('Navigation not ready');
@@ -31,7 +29,6 @@ export default function Profile() {
 			<ScrollView contentContainerStyle={{ padding: 16, paddingBottom: 40 }}>
 				<Text style={s.header}>Profile</Text>
 
-				{/* User card */}
 				<View style={s.userCard}>
 					<Image
 						source={{
@@ -48,7 +45,6 @@ export default function Profile() {
 					</TouchableOpacity>
 				</View>
 
-				{/* Preferences / Addresses */}
 				<Card>
 					<Row label="Address" sub="Manage your saved address" />
 					<Row label="Order History" sub="View your past orders" />
@@ -56,7 +52,6 @@ export default function Profile() {
 					<Row label="Notifications" />
 				</Card>
 
-				{/* Help / Policies */}
 				<Card>
 					<Row label="Contact Us" />
 					<Row label="Get Help" />
@@ -64,7 +59,6 @@ export default function Profile() {
 					<Row label="Terms and Conditions" />
 				</Card>
 
-				{/* Logout */}
 				<View style={[s.card, { paddingVertical: 12 }]}>
 					<TouchableOpacity onPress={onLogout}>
 						<Text style={s.logout}>↪  Log Out</Text>
@@ -75,7 +69,6 @@ export default function Profile() {
 	);
 }
 
-/* ---------- Reusable bits ---------- */
 function Card({ children }: { children: React.ReactNode }) {
 	return <View style={s.card}>{children}</View>;
 }
@@ -92,7 +85,6 @@ function Row({ label, sub }: { label: string; sub?: string }) {
 	);
 }
 
-/* ---------- Styles ---------- */
 const s = StyleSheet.create({
 	header: { fontSize: 22, fontWeight: '800', marginBottom: 12, color: '#111827' },
 
