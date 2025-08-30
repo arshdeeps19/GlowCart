@@ -48,7 +48,6 @@ export default function Home() {
 
 	const Header = (
 		<>
-			{/* Top brand row */}
 			<View style={s.topBar}>
 				<Text style={s.brand}>Viorra</Text>
 				<View style={s.topIcons}>
@@ -57,7 +56,6 @@ export default function Home() {
 				</View>
 			</View>
 
-			{/* Search + filter */}
 			<View style={s.searchRow}>
 				<View style={s.searchBox}>
 					<Text style={{ marginLeft: 8 }}>🔍</Text>
@@ -74,7 +72,6 @@ export default function Home() {
 				</TouchableOpacity>
 			</View>
 
-			{/* Section header */}
 			<View style={s.sectionHead}>
 				<View>
 					<Text style={s.sectionTitle}>Best Products</Text>
@@ -113,7 +110,6 @@ export default function Home() {
 				showsVerticalScrollIndicator={false}
 			/>
 
-			{/* Faux bottom tabs (if you don’t wire real tabs yet) */}
 			<View style={s.tabs}>
 				<TabItem label="Home" active />
 				<TabItem label="Offers" />
@@ -151,7 +147,7 @@ function TabItem({ label, active = false }: { label: string; active?: boolean })
 }
 
 const s = StyleSheet.create({
-	container: { flex: 1, backgroundColor: '#fdeae6' }, // soft pink page bg
+	container: { flex: 1, backgroundColor: '#fdeae6' }, 
 	topBar: {
 		paddingHorizontal: 16, paddingTop: 8, paddingBottom: 10,
 		flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
