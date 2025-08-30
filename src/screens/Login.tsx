@@ -56,7 +56,7 @@ export default function Login({ navigation }: Props) {
               value={pw}
               onChangeText={setPw}
               onBlur={() => setTouched(t => ({ ...t, pw: true }))}
-              onTouchEnd={() => setShowPw(p => !p)} // simple toggle on icon tap
+              onTouchEnd={() => setShowPw(p => !p)} 
             />
             {!!pwError && <Text style={s.error}>{pwError}</Text>}
 
