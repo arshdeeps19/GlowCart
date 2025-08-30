@@ -29,7 +29,7 @@ const s = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-  // thinner than before
+
   brand: { fontSize: 22, fontWeight: '600', color: '#b94f58' },
   right: { flexDirection: 'row', gap: 10 },
   iconBtn: {
